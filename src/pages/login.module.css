@@ -1,0 +1,15 @@
+.container {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.loginForm {
+    width: 250px;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    opacity: 0.8;
+}
