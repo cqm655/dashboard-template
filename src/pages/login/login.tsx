@@ -1,6 +1,6 @@
-import LoginForm from "../components/login-form/login-form";
+import LoginForm from "../../components/login-form/login-form";
 import styles from "./login.module.css";
-import VideoBackground from "../assets/video-background/video-background";
+import VideoBackground from "../../assets/video-background/video-background";
 
 const Login = () => {
   return (

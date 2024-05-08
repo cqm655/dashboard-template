@@ -1,11 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "./pages/login";
+import Login from "./pages/login/login";
 import "./index.css";
+import ErrorPage from "./pages/error/error";
 
 let router = createBrowserRouter([
   {
     path: "/",
     element: <Login />,
+    errorElement: <ErrorPage />,
   },
 ]);
 
