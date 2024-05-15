@@ -1,18 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "./pages/login/login";
 import "./index.css";
-import ErrorPage from "./pages/error/error";
+import AppRoutes from "./app-routes/app-routes";
 
-let router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Login />,
-    errorElement: <ErrorPage />,
-  },
-]);
+const router = createBrowserRouter(AppRoutes);
 
 function App() {
-  return <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
