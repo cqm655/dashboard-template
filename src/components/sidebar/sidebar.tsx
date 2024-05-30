@@ -1,16 +1,16 @@
-import { Layout, Mentions, Menu } from "antd";
+import { Layout, Menu } from "antd";
 
 const { Sider } = Layout;
 const Sidebar = () => {
   return (
     <>
-      <Sider>
+      <Sider style={{ borderRadius: "10px" }}>
         <Menu
           mode="inline"
           theme="light"
           defaultSelectedKeys={["1"]}
           defaultOpenKeys={["sub1"]}
-          style={{ height: "100%", borderRight: 0 }}
+          style={{ height: "100%", borderRight: 0, borderRadius: "8px" }}
           items={[
             {
               key: "1",

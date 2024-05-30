@@ -1,32 +1,55 @@
 import { Button, Form, Input } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import styles from "./login-form.module.css";
+import { useContext } from "react";
+import { AuthContext } from "../../hooks/useAuthContext";
+import { useNavigate } from "react-router-dom";
+import { useAuthorizationMutation } from "../../services/userApi";
 
 const LoginForm = () => {
   const [form] = Form.useForm();
-  const handleSubmit = () => {};
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [authorization] = useAuthorizationMutation();
+
+  const onFinish = async (credentials: any) => {
+    const { domainName, domainPassword } = credentials;
+    const isLoggedIn = await authorization({
+      domainName,
+      domainPassword,
+    });
+    if (isLoggedIn.data) {
+      login();
+      navigate("/");
+    }
+  };
 
   return (
     <>
-      <Form form={form} className={styles.form} autoComplete={"off"}>
+      <Form
+        form={form}
+        className={styles.form}
+        autoComplete={"off"}
+        onFinish={onFinish}
+      >
         <Form.Item
-          name="email"
+          name="domainName"
           rules={[
             {
               required: true,
-              type: "email",
-              message: "Please enter a valid email",
+              type: "string",
+              message: "Please enter Username",
             },
           ]}
           hasFeedback
         >
           <Input
             prefix={<UserOutlined className="site-form-item-icon" />}
-            placeholder="Email"
+            placeholder="Username"
           />
         </Form.Item>
         <Form.Item
-          name="password"
+          name="domainPassword"
           rules={[
             {
               required: true,
@@ -53,7 +76,6 @@ const LoginForm = () => {
             type="primary"
             htmlType="submit"
             className="login-form-button"
-            onClick={handleSubmit}
           >
             Log in
           </Button>
