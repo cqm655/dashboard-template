@@ -1,10 +1,10 @@
 import { Outlet, useNavigation } from "react-router-dom";
 import style from "./root.module.css";
-import NavBar from "../../components/nav-bar/nav-bar";
-import FooterElement from "../../components/footer/footer";
+import NavBar from "../../components/layout/nav-bar/nav-bar";
+import FooterElement from "../../components/layout/footer/footer";
 import { Breadcrumb, Layout } from "antd";
 import { Content } from "antd/es/layout/layout";
-import Sidebar from "../../components/sidebar/sidebar";
+import Sidebar from "../../components/layout/sidebar/sidebar";
 
 const Root = () => {
   return (

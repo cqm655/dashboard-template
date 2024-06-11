@@ -1,7 +1,9 @@
 import { Layout, Menu } from "antd";
+import { useNavigate } from "react-router-dom";
 
 const { Sider } = Layout;
 const Sidebar = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Sider style={{ borderRadius: "10px" }}>
@@ -15,10 +17,16 @@ const Sidebar = () => {
             {
               key: "1",
               label: "nav 1",
+              onClick: () => {
+                navigate("users");
+              },
             },
             {
               key: "2",
               label: "nav 2",
+              onClick: () => {
+                console.log("d");
+              },
             },
             {
               key: "3",

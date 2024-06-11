@@ -54,7 +54,7 @@ const LoginForm = () => {
             {
               required: true,
               type: "regexp",
-              message: "Please enter a valid password",
+              message: "Please enter password",
             },
           ]}
           hasFeedback
@@ -65,11 +65,11 @@ const LoginForm = () => {
             placeholder="Password"
           />
         </Form.Item>
-        <Form.Item>
-          <a className="login-form-forgot" href="">
-            Forgot password
-          </a>
-        </Form.Item>
+        {/*<Form.Item>*/}
+        {/*  <a className="login-form-forgot" href="">*/}
+        {/*    Forgot password*/}
+        {/*  </a>*/}
+        {/*</Form.Item>*/}
 
         <Form.Item>
           <Button
@@ -79,8 +79,8 @@ const LoginForm = () => {
           >
             Log in
           </Button>
-          <hr />
-          Or <a href="">register now!</a>
+          {/*<hr />*/}
+          {/*Or <a href="">register now!</a>*/}
         </Form.Item>
       </Form>
     </>
